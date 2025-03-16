@@ -1,46 +1,49 @@
 {
   "name": "jotation",
-  "displayName": "jotation",
-  "description": "code annotations without comments!",
+  "displayName": "Jotation",
+  "description": "Code annotations without comments!",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
   },
-  "categories": [
-    "Other"
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:jotation.addAnnotation",
+    "onCommand:jotation.toggleAnnotations",
+    "onView:jotation.annotationSidebar"
   ],
-  "activationEvents": [  "onCommand:jotation.helloWorld"
-],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "jotation.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "jotation.addAnnotation",
         "title": "Jotation: Add Annotation"
+      },
+      {
+        "command": "jotation.toggleAnnotations",
+        "title": "Jotation: Toggle Annotations"
+      },
+      {
+        "command": "jotation.refreshAnnotations",
+        "title": "Jotation: Refresh Annotations"
       }
-    ]
-  },
+    ],
+    "views": {
+      "explorer": [
+        {
+          "icon": "",
+          "id": "jotationSidebar",
+          "name": "Jotation Annotations"
+        }
+      ]
+    }
+},
   "scripts": {
-    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
     "@types/vscode": "^1.98.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "@typescript-eslint/eslint-plugin": "^8.25.0",
-    "@typescript-eslint/parser": "^8.25.0",
-    "eslint": "^9.21.0",
-    "typescript": "^5.7.3",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "typescript": "^5.7.3"
   }
 }
