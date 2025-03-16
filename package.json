@@ -17,6 +17,10 @@
       {
         "command": "jotation.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "jotation.addAnnotation",
+        "title": "Jotation: Add Annotation"
       }
     ]
   },
